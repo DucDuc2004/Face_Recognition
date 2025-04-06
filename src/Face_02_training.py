@@ -76,10 +76,8 @@ history = model.fit(datagen.flow(X_train, y_train, batch_size=32),
 # Lưu model
 model.save("model_face_recognition.keras")
 
-# Vẽ biểu đồ Training Loss & Accuracy
 plt.figure(figsize=(12, 5))
 
-# Accuracy Plot
 plt.subplot(1, 2, 1)
 plt.plot(history.history['accuracy'], label='Train Acc')
 plt.plot(history.history['val_accuracy'], label='Val Acc')
@@ -88,7 +86,6 @@ plt.xlabel("Epochs")
 plt.ylabel("Accuracy")
 plt.legend()
 
-# Loss Plot
 plt.subplot(1, 2, 2)
 plt.plot(history.history['loss'], label='Train Loss')
 plt.plot(history.history['val_loss'], label='Val Loss')
@@ -97,6 +94,5 @@ plt.xlabel("Epochs")
 plt.ylabel("Loss")
 plt.legend()
 
-# Lưu biểu đồ vào file
 plt.savefig("result_training.png")
 plt.show()
